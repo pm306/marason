@@ -1,0 +1,6 @@
+    vector<int> vec = {1,2,3,4};
+    rep(i, 10){
+        mt19937 get_rand_mt(初期seed);
+        shuffle(all(vec), get_rand_mt);
+        debug(vec);
+    }

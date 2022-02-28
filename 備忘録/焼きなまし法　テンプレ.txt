@@ -1,0 +1,13 @@
+焼きなまし法　テンプレ
+
+start_temp = (一回の遷移で動きうるスコア幅の最大値程度);
+end_temp = (一回の遷移で動きうるスコア幅の最小値程度);
+temp = start_temp (線形でstart_tempからend_tempに減少する);
+
+while{
+ now_time = duration_cast<microseconds>(system_clock::now() - startClock).count() * 1e-6;
+ temp = start_temp + (end_temp - start_temp) * now_time / TIME_LIMIT;
+
+ prob = exp((new_score-cur_score)/temp)
+ if prob > rand01() : 採用
+}
